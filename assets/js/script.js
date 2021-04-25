@@ -13,15 +13,19 @@ var currentTime = moment().format('h:mma');
 timeArray1 = TaskDescriptionIDs[j].time;
 var position = j+1;
 timeArray2 = TaskDescriptionIDs[position].time;
+
+
 }
 else{
+  var currentTime = moment().format('h:mma');
+  timeArray1 = TaskDescriptionIDs[j].time;
   timeArray2 = '6:00pm';
 }
 
 var beginningTime = moment(currentTime, 'h:mma');
 var endTime = moment(timeArray1, 'h:mma');
 var endTime2 = moment(timeArray2, 'h:mma');
-console.log(beginningTime.isSameOrAfter(endTime)); 
+console.log(endTime2);
 if(beginningTime.isSameOrAfter(endTime) && beginningTime.isBefore(endTime2)){
   $('#' + TaskDescriptionIDs[j].taskid).addClass("present");
 }
