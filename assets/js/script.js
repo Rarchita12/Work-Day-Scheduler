@@ -1,14 +1,12 @@
-
+//Array for each time block
 var TaskDescriptionIDs = [{time: '9:00am', taskid: 'taskDescription9'}, {time: '10:00am', taskid: 'taskDescription10'}, {time: '11:00am', taskid: 'taskDescription11'}, {time: '12:00pm', taskid: 'taskDescription12'}, {time: '1:00pm', taskid: 'taskDescription1'}, {time: '2:00pm', taskid: 'taskDescription2'}, {time: '3:00pm', taskid: 'taskDescription3'}, {time: '4:00pm', taskid: 'taskDescription4'}, {time: '5:00pm', taskid: 'taskDescription5'} ];
-
+//display current day
  $('#currentDay').append(moment(new Date()).format('dddd, MMMM Do'));
  
+ //display appropriate color for each time block (past, present, future)
 function colorTimeBlocks(){
-  
-  /*var id = TaskDescriptionIDs[0].substring(TaskDescriptionIDs[0].lastIndexOf('n') + 1);
-  alert(+id+ +1); // 234234234*/
 
-  for(var j =0; j<TaskDescriptionIDs.length; j++){
+for(var j =0; j<TaskDescriptionIDs.length; j++){
 
 if(j<8){
 var currentTime = moment().format('h:mma');
@@ -20,14 +18,10 @@ else{
   timeArray2 = '6:00pm';
 }
 
-//console.log(currentTime.isBefore(timeBlock._i));
-//console.log(moment(currentTime).isBefore(timeBlock));
-
-
 var beginningTime = moment(currentTime, 'h:mma');
 var endTime = moment(timeArray1, 'h:mma');
 var endTime2 = moment(timeArray2, 'h:mma');
-console.log(beginningTime.isSameOrAfter(endTime)); // true
+console.log(beginningTime.isSameOrAfter(endTime)); 
 if(beginningTime.isSameOrAfter(endTime) && beginningTime.isBefore(endTime2)){
   $('#' + TaskDescriptionIDs[j].taskid).addClass("present");
 }
@@ -47,7 +41,7 @@ else{
 var interval = setInterval(colorTimeBlocks, 1000);
 
 
-
+//save event and save to local Storage
  function saveTask(time, description){
      $('#' + this.time);
      
@@ -55,7 +49,7 @@ var interval = setInterval(colorTimeBlocks, 1000);
 
  }
 
- //var taskDescriptionId = "" + this.localStorage.key(0);
+ //eventer persist when page is refreshed
  window.onload = function() {
 
     console.log("here");
