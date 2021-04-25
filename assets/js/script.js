@@ -25,7 +25,7 @@ else{
 var beginningTime = moment(currentTime, 'h:mma');
 var endTime = moment(timeArray1, 'h:mma');
 var endTime2 = moment(timeArray2, 'h:mma');
-console.log(endTime2);
+
 if(beginningTime.isSameOrAfter(endTime) && beginningTime.isBefore(endTime2)){
   $('#' + TaskDescriptionIDs[j].taskid).addClass("present");
 }
@@ -56,13 +56,13 @@ var interval = setInterval(colorTimeBlocks, 1000);
  //eventer persist when page is refreshed
  window.onload = function() {
 
-    console.log("here");
+    
     for(var i =0; i<localStorage.length; i++){
         var taskDescriptionId = localStorage.key(i);
         var taskValue = localStorage.getItem(localStorage.key(i));
 
        $('#' + taskDescriptionId).val(taskValue);
-        console.log("in");
+        
         }
         
  }

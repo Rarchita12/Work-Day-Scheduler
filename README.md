@@ -14,17 +14,9 @@ A website that offers a real-time work day scheduler. Allows you to add events f
 
 ## Website
 
-https://rarchita12.github.io/Quiz/
+https://rarchita12.github.io/Work-Day-Scheduler/
 
 ![](assets/images/screenshot1.JPG)
-
-![](assets/images/screenshot2.JPG)
-
-![](assets/images/screenshot3.JPG)
-
-![](assets/images/screenshot4.JPG)
-
-![](assets/images/screenshot5.JPG)
 
 ## Contribution
 
